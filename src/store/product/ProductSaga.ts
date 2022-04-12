@@ -26,7 +26,7 @@ export const ProductSaga = {
   sagas,
   * mainSaga() {
     yield* all([
-      takeLatest(ProductSlice.actions.loadPreview.name, sagas.loadPreviewAsync),
+      takeLatest(ProductSlice.actions.loadPreview.type, sagas.loadPreviewAsync),
     ])
   },
 }
