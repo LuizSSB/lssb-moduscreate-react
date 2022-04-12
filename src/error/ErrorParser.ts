@@ -1,3 +1,4 @@
+import i18next from 'i18next'
 import { injectable } from 'inversify'
 import { isError } from 'lodash'
 import { AppError } from './AppError'
@@ -9,6 +10,6 @@ export class ErrorParser {
   parse = (error: unknown): AppError => ({
     message: isError(error)
       ? error.message
-      : 'TODO Error message',
+      : i18next.t('error.unknown'),
   })
 }

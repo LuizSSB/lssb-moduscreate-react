@@ -18,7 +18,10 @@ export const ProductSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    loadPreview: LoadableStateEx.reducer.startLoading('loadPreview'),
+    loadPreview(state) {
+      LoadableStateEx.reducer.startLoading('loadPreview')(state)
+      state.latestError = undefined
+    },
     receivePreview: LoadableStateEx.reducer.receiveValue('loadPreview', 'preview'),
     failLoadPreview: LoadableStateEx.reducer.receiveError('loadPreview'),
   },
