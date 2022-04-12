@@ -2,6 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import 'reflect-metadata'
 import { App } from './App'
+import { IoC } from './ioc/IoC'
+
+IoC.load()
 
 const rootElement = document.getElementById('root')
 ReactDOM.render(

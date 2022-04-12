@@ -1,4 +1,5 @@
 import { Container } from 'inversify'
+import { ErrorParser } from '../error/ErrorParser'
 import { ProductRepository } from '../repository/ProductRepository'
 import { ProductService } from '../service/ProductService'
 import { InjectableType, PlatformContainerLoader } from './IoC'
@@ -20,5 +21,8 @@ export class DefaultContainerLoader implements PlatformContainerLoader {
 
     // luizssb: repositories
     ProductRepository,
+
+    // luizssb: misc
+    ErrorParser,
   ]
 }

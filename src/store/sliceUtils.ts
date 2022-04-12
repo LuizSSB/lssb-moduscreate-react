@@ -1,12 +1,13 @@
 import { PayloadAction } from '@reduxjs/toolkit'
+import { AppError } from '../error/AppError'
 import { pushIdempotent, spliceValue } from '../utils/collection'
 
-export type ErrorAction = PayloadAction<string>
+export type ErrorAction = PayloadAction<AppError>
 
 export type LoadableState<TTag> = {
   loadingTags: TTag[]
   latestError?: {
-    error: string
+    error: AppError
     tag: TTag
   }
 }
