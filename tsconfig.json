@@ -31,7 +31,8 @@
     "types": [
       "reflect-metadata"
     ],
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true
   },
   "include": [
     "src"

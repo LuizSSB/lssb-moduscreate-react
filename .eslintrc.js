@@ -23,6 +23,7 @@ module.exports = {
     '@typescript-eslint',
     'react',
     'react-hooks',
+    '@jambit/typed-redux-saga',
   ],
   rules: {
     'class-methods-use-this': 'warn',
@@ -33,7 +34,6 @@ module.exports = {
       boolean: true,
       number: true,
       string: true,
-      allow: ['!!'],
     }],
     'no-unused-vars': 'off',
     'no-use-before-define': 'warn',
@@ -55,6 +55,16 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
   },
+  overrides: [
+    {
+      files: ["./**/*.ts"],
+      excludedFiles: ["./**/*.spec.ts"],
+      rules: {
+        "@jambit/typed-redux-saga/use-typed-effects": "error",
+        "@jambit/typed-redux-saga/delegate-effects": "error"
+      }
+    }
+  ],
   settings: {
     'import/resolver': {
       node: {
