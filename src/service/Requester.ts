@@ -7,8 +7,10 @@ import { Configurations } from '../Configurations'
 export class Requester {
   static readonly KEY_IOC = Symbol.for('Requester')
 
+  constructor(private readonly baseURL: string = Configurations.uris.SERVICE) { }
+
   private readonly axios = axios.create({
-    baseURL: Configurations.uris.SERVICE,
+    baseURL: this.baseURL,
   })
 
   private handleResponse = <T>(response: AxiosResponse<T>): T => {
