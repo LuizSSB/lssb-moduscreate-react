@@ -1,4 +1,6 @@
 import { Container } from 'inversify'
+import { ProductRepository } from '../repository/ProductRepository'
+import { ProductService } from '../service/ProductService'
 import { InjectableType, PlatformContainerLoader } from './IoC'
 
 export class DefaultContainerLoader implements PlatformContainerLoader {
@@ -13,5 +15,10 @@ export class DefaultContainerLoader implements PlatformContainerLoader {
   }
 
   protected readonly singletonMappings: InjectableType[] = [
+    // luizssb: services
+    ProductService,
+
+    // luizssb: repositories
+    ProductRepository,
   ]
 }

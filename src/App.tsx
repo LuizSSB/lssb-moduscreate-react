@@ -1,8 +1,10 @@
 /* eslint-disable-next-line no-use-before-define */
 import React from 'react'
+import { Configurations } from './Configurations'
 import './styles.css'
 
 export function App() {
+  console.log(Configurations.uris.SERVICE)
   return (
     <div className="text-center p-2">
       <h1 className="font-bold text-3xl text-gray-800 my-2">
