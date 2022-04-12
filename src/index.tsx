@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import 'reflect-metadata'
 import { App } from './App'
 import { IoC } from './ioc/IoC'
+import './index.css'
 
 IoC.load()
 
