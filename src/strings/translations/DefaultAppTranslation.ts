@@ -9,6 +9,7 @@ const AppTranslationObject = {
   home: {
     title: 'New Arrivals',
     label: {
+      variants: 'Variants',
       price: '${{price, number}}',
     },
   },

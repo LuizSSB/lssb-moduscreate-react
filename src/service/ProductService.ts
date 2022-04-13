@@ -10,8 +10,6 @@ export class ProductService {
   @inject(Requester.KEY_IOC)
   private readonly requester!: Requester
 
-  value = 0
-
   // luizssb: simulates pagination
   getProducts = async (paging: Paging): Promise<EntryPage<Product>> => {
     const allProducts: Product[] = await this.requester.get('')
