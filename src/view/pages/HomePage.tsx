@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch } from 'react-redux'
-import { ClipLoader } from 'react-spinners'
 import { ProductSlice } from '../../store/product/ProductSlice'
 import { Scaffold } from '../components/Scaffold'
 import { useAppSelector } from '../useAppSelector'
@@ -20,19 +19,40 @@ export const ProductListPage = () => {
     dispatch(ProductSlice.actions.loadPreview())
   }, [dispatch])
 
+  const dispatchReload = useCallback(
+    () => {
+      if (!isLoading) {
+        dispatch(ProductSlice.actions.loadPreview())
+      }
+    },
+    [dispatch, isLoading],
+  )
+
   return (
     <Scaffold>
-      <h2 className="
+      <div className="
+        flex justify-center
         text-center text-gray-500 text-2xl font-bold
         border-b border-slate-200
         pb-4"
       >
-        {t('home.title')}
-      </h2>
+        <div className="relative w-[640px]">
+          <h2>{t('home.title')}</h2>
+          {!isLoading && (
+            <button
+              type="button"
+              className="absolute right-0 top-0 w-[30px]"
+              onClick={dispatchReload}
+            >
+              <img src="img/spinner.svg" alt="reload" />
+            </button>
+          )}
+        </div>
+      </div>
       <div className="align-center content-center">
         {isLoading && (
-          <div className="text-center my-5">
-            <ClipLoader loading />
+          <div className="flex justify-center my-5">
+            <img src="img/spinner.svg" alt="loading" className="animate-spin" />
           </div>
         )}
         {error
@@ -46,7 +66,7 @@ export const ProductListPage = () => {
                   bg-gray-600 hover:bg-gray-900
                   rounded-full
                   text-white text-center"
-                onClick={() => dispatch(ProductSlice.actions.loadPreview())}
+                onClick={dispatchReload}
               >
                 {t('common.tryAgain')}
               </button>
