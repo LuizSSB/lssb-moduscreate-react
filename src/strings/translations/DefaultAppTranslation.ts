@@ -3,7 +3,8 @@
 const AppTranslationObject = {
   common: {
     appName: 'Modus Create test',
-    footer: 'Developed by Luiz S.S. Baglie (luizssb -at- gmail -dot- com)',
+    footer1: 'Developed by Luiz S.S. Baglie',
+    footer2: '(luizssb.biz -at- gmail -dot- com)',
     tryAgain: 'Try again',
   },
   home: {

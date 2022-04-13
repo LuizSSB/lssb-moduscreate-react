@@ -79,7 +79,7 @@ export const ProductListPage = () => {
                   className="
                     self-center
                     font-sans
-                    my-5 mr-5
+                    my-5 mx-3
                     p-5
                     w-[450px] h-[270px]
                     bg-gray-200 hover:bg-blue-100

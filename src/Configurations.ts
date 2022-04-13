@@ -15,4 +15,7 @@ export const Configurations = {
   uris: {
     SERVICE: getEnv('API_URL'),
   },
+  links: {
+    PERSONAL: 'https://github.com/LuizSSB',
+  },
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { Configurations } from '../../Configurations'
 
 export type ScaffoldProps = React.PropsWithChildren<unknown>
 
@@ -15,8 +16,19 @@ export const Scaffold = ({ children }: ScaffoldProps) => {
       <main className="p-5 grow bg-gray-50">
         {children}
       </main>
-      <footer className="p-5 text-gray-400 bg-white border-t border-slate-200 shadow-sm">
-        {t('common.footer')}
+      <footer className="flex items-center p-5 text-gray-400 bg-white border-t border-slate-200 shadow-sm">
+        <a
+          href={Configurations.links.PERSONAL}
+          target="__blank"
+          className="w-[30px] mr-5"
+        >
+          <img src="img/github.svg" alt="github" />
+        </a>
+        <div>
+          {t('common.footer1')}
+          <br />
+          {t('common.footer2')}
+        </div>
       </footer>
     </div>
   )
